@@ -18,26 +18,29 @@ public class Exercise1 {
 		// class is invoked.
 
 		driver = new ChromeDriver(); // Creating New Instance Of Chrome Driver
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);// This syntax will force webdriver to wait for
-		// 10 second if element not found on page.
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		// Force webdriver to wait 10 second if element not found on page
 		driver.manage().window().maximize();// Maximize browser
-		driver.get("https://itera-qa.azurewebsites.net/home/automation"); // Command To Open URL In Browser
+		driver.get("https://itera-qa.azurewebsites.net/home/automation"); // Open URL In Browser
 	}
 
 	@Test
 	public void textarea() {
-
-		/**
-		 * fill in the code to complete the test method
-		 */
-
+		driver.findElement(By.id("name")).sendKeys("hume");
+		// TODO mobile, email, password, address, submit
 	}
 
 	@AfterClass
 	public void afterClass() {
-		driver.close();
 		// The annotated method will be run after all the test methods in the current
 		// class have been run.
-	}
 
+		try {
+			System.out.println("Press any key to continue...");
+			System.in.read();
+		} catch (Exception e) {
+			;
+		}
+		driver.close();
+	}
 }
