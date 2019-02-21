@@ -28,7 +28,7 @@ public class Exercise2 {
 
 	@AfterClass
 	public void afterClass() {
-
+		driver.close();
 	}
 
 }
