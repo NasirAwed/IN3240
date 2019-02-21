@@ -11,14 +11,13 @@ import org.testng.annotations.AfterClass;
 
 public class Exercise1 {
 	WebDriver driver;
-	
-	
+
 	@BeforeClass
 	public void beforeClass() {
 		// The annotated method will be run before the first test method in the current
 		// class is invoked.
-		
-		driver = new ChromeDriver();  // Creating New Instance Of Chrome Driver
+
+		driver = new ChromeDriver(); // Creating New Instance Of Chrome Driver
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);// This syntax will force webdriver to wait for
 		// 10 second if element not found on page.
 		driver.manage().window().maximize();// Maximize browser
@@ -27,18 +26,18 @@ public class Exercise1 {
 
 	@Test
 	public void textarea() {
-		
+
 		/**
-	     * fill in the code to complete the test method
-	    */
+		 * fill in the code to complete the test method
+		 */
 
 	}
 
 	@AfterClass
 	public void afterClass() {
-		 driver.close();
+		driver.close();
 		// The annotated method will be run after all the test methods in the current
-		 // class have been run.
+		// class have been run.
 	}
 
 }

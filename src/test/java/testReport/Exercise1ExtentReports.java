@@ -16,7 +16,6 @@ import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 
-
 public class Exercise1ExtentReports {
 	WebDriver driver;
 	private static ExtentReports report;
@@ -25,7 +24,7 @@ public class Exercise1ExtentReports {
 	@BeforeClass
 	public void beforeClass() {
 		report = new ExtentReports("C:\\Reports\\IN3240\\Exercise1.html");
-		test= report.startTest("Exercise1");
+		test = report.startTest("Exercise1");
 		driver = new ChromeDriver();
 		test.log(LogStatus.INFO, "Launched new browser");
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -34,38 +33,38 @@ public class Exercise1ExtentReports {
 		test.log(LogStatus.INFO, "Navigated to " + driver.getCurrentUrl());
 	}
 
-	@Test(priority=1)
+	@Test(priority = 1)
 	public void textarea() {
-		
+
 		WebElement nameElement = driver.findElement(By.id("name"));
 		nameElement.sendKeys("Ola Nordmann");
 		test.log(LogStatus.INFO, "Navn: " + nameElement.getAttribute("value"));
-		
-		WebElement phoneElement = driver.findElement(By.id("phone")); 
+
+		WebElement phoneElement = driver.findElement(By.id("phone"));
 		phoneElement.sendKeys("+4712345678");
 		test.log(LogStatus.INFO, "Phone: " + phoneElement.getAttribute("value"));
-		
+
 		WebElement emailElement = driver.findElement(By.id("email"));
 		emailElement.sendKeys("test@test.no");
 		test.log(LogStatus.INFO, "Email: " + emailElement.getAttribute("value"));
-		
+
 		WebElement passwordElement = driver.findElement(By.id("password"));
 		passwordElement.sendKeys("itera");
-				
+
 		WebElement addressElement = driver.findElement(By.id("address"));
 		addressElement.sendKeys("Nydalsveien 28");
 		test.log(LogStatus.INFO, "Address: " + addressElement.getAttribute("value"));
-		
+
 		driver.findElement(By.name("submit")).click();
 		test.log(LogStatus.INFO, "Clicked on Submit button");
-			
+
 	}
-	
+
 	/**
-     * For Mac/Linux you need to change path in ScreenShots.java    
-    */
-	
-	//Take a screenShots if test fail
+	 * For Mac/Linux you need to change path in ScreenShots.java
+	 */
+
+	// Take a screenShots if test fail
 	@AfterMethod
 	public void tearDown(ITestResult testResult) throws IOException {
 		if (testResult.getStatus() == ITestResult.FAILURE) {
@@ -74,8 +73,8 @@ public class Exercise1ExtentReports {
 			test.log(LogStatus.FAIL, "TASK 1 - FAILED", imagePath);
 		}
 	}
-	
-	//Take a screenShots if test pass
+
+	// Take a screenShots if test pass
 	@AfterMethod
 	public void Summary(ITestResult summary) throws IOException {
 		if (summary.getStatus() == ITestResult.SUCCESS) {

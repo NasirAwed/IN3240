@@ -24,8 +24,8 @@ public class Exercise3 {
 	@Test
 	public void DropDown() {
 		/**
-	     * fill in the code to complete the test method
-	    */
+		 * fill in the code to complete the test method
+		 */
 	}
 
 	@AfterClass

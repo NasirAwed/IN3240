@@ -10,8 +10,8 @@ import org.openqa.selenium.WebDriver;
 public class ScreenShots {
 	public static String takeScreenshot(WebDriver driver, String fileName) throws IOException {
 		fileName = fileName + ".png";
-		String directory = "C:\\Reports\\IN3240"; //This path for Windows you need to change it for Mac/Linux
-		File sourceFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		String directory = "C:\\Reports\\IN3240"; // This path for Windows you need to change it for Mac/Linux
+		File sourceFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		FileUtils.copyFile(sourceFile, new File(directory + fileName));
 		String destination = directory + fileName;
 		return destination;

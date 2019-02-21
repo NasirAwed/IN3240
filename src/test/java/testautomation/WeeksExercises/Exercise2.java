@@ -22,13 +22,13 @@ public class Exercise2 {
 	@Test
 	public void checkBoxRadioButton() {
 		/**
-	     * fill in the code to complete the test method
-	    */
+		 * fill in the code to complete the test method
+		 */
 	}
 
 	@AfterClass
 	public void afterClass() {
-		
+
 	}
 
 }

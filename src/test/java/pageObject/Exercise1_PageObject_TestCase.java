@@ -11,7 +11,7 @@ import pageObject.Exercise1WebElement2;
 public class Exercise1_PageObject_TestCase {
 	WebDriver driver;
 	Exercise1WebElement2 exercise1;
-	
+
 	@BeforeClass
 	public void beforeClass() {
 		driver = new ChromeDriver();
@@ -26,11 +26,11 @@ public class Exercise1_PageObject_TestCase {
 		exercise1.fillInForm();
 
 	}
-	
+
 	@AfterClass
 	public void afterClass() {
 		driver.close();
-		
+
 	}
 
 }

@@ -20,15 +20,15 @@ public class Exercise4 {
 	}
 
 	@Test
-	public void checkBoxRadioButtonXpath(){
+	public void checkBoxRadioButtonXpath() {
 		/**
-	     * fill in the code to complete the test method
-	    */
+		 * fill in the code to complete the test method
+		 */
 	}
 
 	@AfterClass
 	public void afterClass() {
-		
+
 	}
 
 }
