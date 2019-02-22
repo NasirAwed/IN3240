@@ -21,9 +21,9 @@ public class Exercise2 {
 
 	@Test
 	public void checkBoxRadioButton() {
-		/**
-		 * fill in the code to complete the test method
-		 */
+		driver.findElement(By.id("other")).click();
+		driver.findElement(By.id("tuesday")).click();
+		driver.findElement(By.id("friday")).click();
 	}
 
 	@AfterClass
