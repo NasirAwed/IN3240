@@ -27,7 +27,8 @@ public class Exercise1 {
 	@Test
 	public void textarea() {
 		driver.findElement(By.id("name")).sendKeys("hume");
-		// TODO mobile, email, password, address, submit
+		driver.findElement(By.xpath("//*[@id=\"phone\"]")).sendKeys("123 45 678");;
+		// TODO email, password, address, submit
 	}
 
 	@AfterClass
