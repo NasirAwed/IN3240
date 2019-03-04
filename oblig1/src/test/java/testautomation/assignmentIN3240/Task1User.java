@@ -7,9 +7,17 @@ import com.relevantcodes.extentreports.LogStatus;
 import testautomation.assignmentIN3240.NewUserWebElement;
 import testautomation.assignmentIN3240.ScreenShots;
 import org.testng.annotations.BeforeClass;
+
+import static org.testng.Assert.assertEquals;
+
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathFactory;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.ITestResult;
@@ -31,21 +39,39 @@ public class Task1User {
 	    */
 		report = new ExtentReports("C:\\Reports\\IN3240\\Task1.html");  
 		test = report.startTest("Task 1");
-		
-		//System.setProperty("webdriver.chrome.driver", "/path/to/chromedriver"); 
+		//XPath xPath =  XPathFactory.newInstance().newXPath();
+		System.setProperty("webdriver.chrome.driver", "/Users/nasirawed/Documents/in3240/workspace/chromedriver"); 
 		driver = new ChromeDriver();
 		test.log(LogStatus.INFO, "Browser started");
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 		driver.get("https://itera-qa.azurewebsites.net/");
 		
 	}
 
 	@Test
-	public void createNewUser() {
+	public void createNewUser() throws InterruptedException {
 		
 		//Create a new instance of the NewUserWebElement page object
-		//NewUserWebElement user = new NewUserWebElement(driver);
+		NewUserWebElement user = new NewUserWebElement(driver);
+		user.clickSignUpBtn();
+		WebElement nameElemen = driver.findElement(By.xpath("//*[@id=\"FirstName\"]"));
+		nameElemen.sendKeys("FirstNamefake1");
+		WebElement surName = driver.findElement(By.xpath("//*[@id=\"Surname\"]"));
+		surName.sendKeys("surnamefake1");
+		WebElement eMail = driver.findElement(By.xpath("//*[@id=\"E_post\"]"));
+		eMail.sendKeys("FakeEmail1@hotmail.com");
+		WebElement phonenr = driver.findElement(By.xpath("//*[@id=\"Mobile\"]"));
+		phonenr.sendKeys("9932939");
+		WebElement userName = driver.findElement(By.xpath("//*[@id=\"Username\"]"));
+		userName.sendKeys("fakeUsername1");
+		WebElement password = driver.findElement(By.xpath("//*[@id=\"Password\"]"));
+		password.sendKeys("fakeultrahackablepassword1");
+		WebElement confirmPassword = driver.findElement(By.xpath("//*[@id=\"ConfirmPassword\"]"));
+		confirmPassword.sendKeys("fakeultrahackablepassword1");
+		driver.findElement(By.xpath("//*[@id=\"submit\"]")).click(); 
+		TimeUnit.SECONDS.sleep(10);
+		assertEquals(driver.findElement(By.xpath("/html/body/div/form/div/div[9]/div/label")).getText(),"Registration Successful");
 		
 		/**
 	     * fill in the code to complete the test method
