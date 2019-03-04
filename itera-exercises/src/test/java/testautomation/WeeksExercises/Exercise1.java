@@ -32,15 +32,8 @@ public class Exercise1 {
 
 	@AfterClass
 	public void afterClass() {
-		// The annotated method will be run after all the test methods in the current
-		// class have been run.
-
-		try {
-			System.out.println("Press any key to continue...");
-			System.in.read();
-		} catch (Exception e) {
-			;
-		}
+		Prompter pr = new Prompter();
+		pr.pressAnyKey();
 		driver.close();
 	}
 }
