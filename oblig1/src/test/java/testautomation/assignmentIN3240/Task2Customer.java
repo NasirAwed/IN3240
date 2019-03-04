@@ -32,7 +32,6 @@ public class Task2Customer {
 	    */
 		report = new ExtentReports("C:\\Reports\\IN3240\\Task2.html");
 		test = report.startTest("Task 2");
-		System.setProperty("webdriver.chrome.driver", "/Users/nasirawed/Documents/in3240/workspace/chromedriver");  
 		driver = new ChromeDriver();
 		test.log(LogStatus.INFO, "Browser started");
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
