@@ -16,9 +16,17 @@ Task 0
   * The invasive system of sonarcloud wants way to many permissions
   * One has to download proprietary buildwrapper and scanner
   * Running the buildwrapper fails with `LD_PRELOAD cannot be preloaded`
-  * Etc
-  * Not worth the suffering!
-* Attempting option 2
+  * Hardly worth the suffering
+* https://github.com/byllgrim/svi
+* https://sonarcloud.io/dashboard?id=byllgrim_svi
+
+    INFO: Analysis total time: 8.708 s
+    INFO: ----------------------------------------------------------------------
+    INFO: EXECUTION SUCCESS
+    INFO: ----------------------------------------------------------------------
+    INFO: Total time: 10.305s
+    INFO: Final Memory: 30M/369M
+    INFO: ----------------------------------------------------------------------
 
 Task 1
 * TODO The metrics say:
