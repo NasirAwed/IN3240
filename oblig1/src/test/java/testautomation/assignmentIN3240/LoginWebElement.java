@@ -1,5 +1,6 @@
 package testautomation.assignmentIN3240;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -20,6 +21,7 @@ public class LoginWebElement {
 
 	// Login
 	public void loginValidUser() {
+		driver.findElement(By.xpath("//*[@id=\"navbarColor01\"]/form/ul/li[2]/a")).click();
 		/**
 	     * fill in the code to complete the method
 	    */

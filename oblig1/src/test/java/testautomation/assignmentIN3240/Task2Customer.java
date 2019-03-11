@@ -11,7 +11,10 @@ import testautomation.assignmentIN3240.ScreenShots;
 import org.testng.annotations.BeforeClass;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
@@ -44,10 +47,13 @@ public class Task2Customer {
 
 	@Test(priority = 1, description = "Login with valid user")
 	public void login() {
-		
+		LoginWebElement login = new LoginWebElement(driver);
+		login.loginValidUser();
 		// Create a new instance of the LoginWebElement page object
-		//LoginWebElement login = new LoginWebElement(driver);
-		
+		WebElement username  = driver.findElement(By.xpath("//*[@id=\"Username\"]"));
+		username.sendKeys("FirstNamefake1");
+		WebElement password  = driver.findElement(By.xpath("//*[@id=\"Password\"]"));
+		password.sendKeys("fakeultrahackablepassword1");
 		/**
 	     * fill in the code to complete the test method
 	     * Call login method from LoginWebElement.java
@@ -60,7 +66,17 @@ public class Task2Customer {
 		
 		// Create a new instance of the CustomerWebElement page object
 		//CustomerWebElement customer = new CustomerWebElement(driver);
+		//customer.create();
+		// Har ikke CustomerWebElement
+		//driver.findElement(By.xpath("/html/body/div/div/p[1]/a")).click();
 		
+		driver.findElement(By.xpath("//*[@id=\"Name\"]")).sendKeys("NN");
+		driver.findElement(By.xpath("//*[@id=\"Company\"]")).sendKeys("NN");
+		driver.findElement(By.xpath("//*[@id=\"Address\"] ")).sendKeys("adresse");
+		driver.findElement(By.xpath("//*[@id=\\\"city\\\"]")).sendKeys("oslo");
+		driver.findElement(By.xpath("//*[@id=\"Phone\"]")).sendKeys("9329233");
+		driver.findElement(By.xpath("//*[@id=\"Email\"]")).sendKeys("fake@hotmailcom");
+		driver.findElement(By.xpath("/html/body/div/form/div/div[7]/div/input")).click();
 		
 		/**
 	     * fill in the code to complete the test method

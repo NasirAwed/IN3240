@@ -22,6 +22,14 @@ public class NewUserWebElement {
 	public void clickSignUpBtn() {
 		
 		driver.findElement(By.xpath("//*[@id=\"navbarColor01\"]/form/ul/li[1]/a")).click();
+		
+		/*WebElement mobile = driver.findElement(By.xpath("/html/body/nav/button/span"));
+		if (mobile != null) {
+			mobile.click();
+		
+		WebElement signup = driver.findElement(By.xpath("//*[@id=\"navbarColor01\"]/form/ul/li[1]/a"));
+		signup.click();
+	}*/
 		/**
 	     * fill in the code to complete the method
 	    */

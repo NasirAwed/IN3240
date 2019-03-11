@@ -70,9 +70,13 @@ public class Task1User {
 		WebElement confirmPassword = driver.findElement(By.xpath("//*[@id=\"ConfirmPassword\"]"));
 		confirmPassword.sendKeys("fakeultrahackablepassword1");
 		driver.findElement(By.xpath("//*[@id=\"submit\"]")).click(); 
-		TimeUnit.SECONDS.sleep(10);
-		assertEquals(driver.findElement(By.xpath("/html/body/div/form/div/div[9]/div/label")).getText(),"Registration Successful");
 		
+		TimeUnit.SECONDS.sleep(10);
+		String  string = driver.findElement(By.xpath("/html/body/div/form/div/div[9]/div/label")).getText();
+		if(string.length()!=0) {
+		assertEquals(driver.findElement(By.xpath("/html/body/div/form/div/div[9]/div/label")).getText(),"Registration Successful");
+		}
+		else {System.out.println("String 1 is null or empty?"); }
 		/**
 	     * fill in the code to complete the test method
 	    */
