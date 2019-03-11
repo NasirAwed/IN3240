@@ -1,30 +1,24 @@
 package testautomation.assignmentIN3240;
 
-import org.testng.annotations.Test;
+import static org.testng.Assert.assertEquals;
+
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
-import testautomation.assignmentIN3240.NewUserWebElement;
-import testautomation.assignmentIN3240.ScreenShots;
-import org.testng.annotations.BeforeClass;
-
-import static org.testng.Assert.assertEquals;
-
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
-import javax.xml.xpath.XPath;
-import javax.xml.xpath.XPathFactory;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 
 public class Task1User {
+
 	private WebDriver driver;
 	private static ExtentReports report;
 	private static ExtentTest test;
@@ -109,10 +103,10 @@ public class Task1User {
 		}
 	}
 
-	@AfterClass
-	public void endTest() {
-		driver.close(); //Close browser
-		report.flush(); // Appends the HTML file with all the ended tests.
-	}
-
+	
+  @AfterClass
+  public void endTest() {
+    driver.close(); // Close browser
+    report.flush(); // Appends the HTML file with all the ended tests.
+  }
 }

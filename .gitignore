@@ -3,3 +3,5 @@ C*
 .classpath
 .settings
 .project
+*.png
+*.html

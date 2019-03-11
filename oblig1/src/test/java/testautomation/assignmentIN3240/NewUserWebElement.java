@@ -3,11 +3,11 @@ package testautomation.assignmentIN3240;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class NewUserWebElement {
-	WebDriver driver;
+  WebDriver driver;
+
 
 	//@FindBy(linkText = "Sign Up")
 	//WebElement signUpBtn;
@@ -36,4 +36,5 @@ public class NewUserWebElement {
 	}
 	
 	
+
 }
