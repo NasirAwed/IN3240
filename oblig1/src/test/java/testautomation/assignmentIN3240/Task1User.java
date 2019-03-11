@@ -24,25 +24,20 @@ public class Task1User {
 
   @BeforeClass
   public void beforeClass() {
-    /**
-     * Test report will be generated to below path This path (C:\\Reports\\IN3240\\Task1.html) for
-     * Windows. For Mac/Linux you need to change path
-     */
-    report = new ExtentReports("C:\\Reports\\IN3240\\Task1.html");
+    report = new ExtentReports("Task1.html");
     test = report.startTest("Task 1");
-    // XPath xPath =  XPathFactory.newInstance().newXPath();
+
     driver = new ChromeDriver();
     test.log(LogStatus.INFO, "Browser started");
     driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-    driver.manage().window().maximize();
+    driver.manage().window().maximize(); // TODO this line is ineffective on my computer
     driver.get("https://itera-qa.azurewebsites.net/");
   }
 
   @Test
   public void createNewUser() throws InterruptedException {
-    // Create a new instance of the NewUserWebElement page object
     NewUserWebElement user = new NewUserWebElement(driver);
-    user.clickSignUpBtn();
+    user.clickSignUpBtn(); // TODO PageObjects is not mandatory. Either all the way or no way!
 
     WebElement nameElemen = driver.findElement(By.xpath("//*[@id=\"FirstName\"]"));
     nameElemen.sendKeys("FirstNamefake1");
@@ -57,7 +52,7 @@ public class Task1User {
     phonenr.sendKeys("9932939");
 
     WebElement userName = driver.findElement(By.xpath("//*[@id=\"Username\"]"));
-    userName.sendKeys("fakeUsername4");
+    userName.sendKeys("fakeUsername4"); // TODO find a solution to "username already registered"
 
     WebElement password = driver.findElement(By.xpath("//*[@id=\"Password\"]"));
     password.sendKeys("fakeultrahackablepassword1");
@@ -71,8 +66,6 @@ public class Task1User {
         driver.findElement(By.xpath("/html/body/div/form/div/div[9]/div/label")).getText(),
         "Registration Successful");
   }
-
-  /** For Mac/Linux you need to change path in ScreenShots.java */
 
   // Take a screenShots if test fail
   @AfterMethod
