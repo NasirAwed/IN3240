@@ -20,13 +20,15 @@ Task 0
 * https://github.com/byllgrim/svi
 * https://sonarcloud.io/dashboard?id=byllgrim_svi
 
-    INFO: Analysis total time: 8.708 s
-    INFO: ----------------------------------------------------------------------
-    INFO: EXECUTION SUCCESS
-    INFO: ----------------------------------------------------------------------
-    INFO: Total time: 10.305s
-    INFO: Final Memory: 30M/369M
-    INFO: ----------------------------------------------------------------------
+```
+INFO: Analysis total time: 8.708 s
+INFO: ----------------------------------------------------------------------
+INFO: EXECUTION SUCCESS
+INFO: ----------------------------------------------------------------------
+INFO: Total time: 10.305s
+INFO: Final Memory: 30M/369M
+INFO: ----------------------------------------------------------------------
+```
 
 Task 1
 * TODO The metrics say:
