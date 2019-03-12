@@ -79,5 +79,7 @@ Task 3
 Part 3
 ======
 
+![tdd_cycle]{./tdd.png}
+
 Part 4
 ======
