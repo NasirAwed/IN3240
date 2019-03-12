@@ -79,9 +79,13 @@ Task 3
 Part 3
 ======
 
-Session id: `eDxgXL`
+Easy task
+* Session id: `eDxgXL`
+* https://cyber-dojo.org/kata/edit/eDxgXL
 
-https://cyber-dojo.org/kata/edit/eDxgXL
+Hard task
+* Session id: `bftdZb`
+* https://cyber-dojo.org/kata/edit/bftdZb
 
 We tried to follow this cycle:
 ![tdd_cycle](./tdd.png)
