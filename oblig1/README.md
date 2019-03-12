@@ -79,6 +79,11 @@ Task 3
 Part 3
 ======
 
+Session id: `eDxgXL`
+
+https://cyber-dojo.org/kata/edit/eDxgXL
+
+We tried to follow this cycle:
 ![tdd_cycle](./tdd.png)
 
 Part 4
