@@ -11,7 +11,8 @@ https://docs.sonarqube.org/display/SONAR/User+Guide
 
 https://sonarcloud.io/about/sq
 
-Task 0
+### Task 0
+
 * Tried to do option 3, but the process was like hell on earth
   * The invasive system of sonarcloud wants way to many permissions
   * One has to download proprietary buildwrapper and scanner
@@ -30,22 +31,20 @@ INFO: Final Memory: 30M/369M
 INFO: ----------------------------------------------------------------------
 ```
 
-Task 1
-1.1  The metrics of a quality gate are checkpoints, that your program needs to pass before the release.
+### Task 1
+1.  The metrics of a quality gate are checkpoints, that your program needs to pass before the release.
+2.
+    1. Bugs are logic failures or syntax failures resulting in that your program will not be able to execute.
+    2. Vulnerabilities are security weaknesses that can be used by bad actors.
+    3. Code Smells are indications that there is a deeper problem in the system
+    4. Blocker are issues that you absolutly need to fix, before continuing.
+    5. Coverage is the extent to which you have exercised the code.
+3.
+    1. 0 
+    2. 0
+    3. 22
 
-1.2:
-1.2.1 Bugs are logic failures or syntax failures resulting in that your program will not be able to execute.
-1.2.2 Vulnerabilities are security weaknesses that can be used by bad actors.
-1.2.3 Code Smells are indications that there is a deeper problem in the system
-1.2.4 Blocker are issues that you absolutly need to fix, before continuing.
-1.2.5 Coverage is the extent to which you have exercised the code.
-
-1.3:
-1.3.1: 0 
-1.3.2: 0
-1.3.3: 22
-
-Task 2
+### Task 2
 2.1: Code smell: 1. "Reduce the number of nested break and goto statements from 2 to 1 authorized." 
 It complains because loops should not have more than one break.
 
@@ -66,14 +65,14 @@ code smell 3: Adding a default case will solve the issue.
 Code smell 4: Declare the type on each line, separately.
 
 
-Task 3
+### Task 3
 
-3.1 
-3.1.1 A False-positive is an issue pointed out by the analytics tool, but the developer means it is not an issue.
-3.1.2  False-negative is the inverse of 3.1.1.
+1.
+    1. A False-positive is an issue pointed out by the analytics tool, but the developer means it is not an issue.
+    2.  False-negative is the inverse of 3.1.1.
 
-3.2  A example of a false-positve is the code smell 4: "Define each identifier in a dedicated statement".
- A example of a false-negative is old comments referring to old code.
+2.  A example of a false-positve is the code smell 4: "Define each identifier in a dedicated statement".
+    A example of a false-negative is old comments referring to old code.
 
 
 Part 3
