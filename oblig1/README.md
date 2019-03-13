@@ -45,25 +45,20 @@ INFO: ----------------------------------------------------------------------
     3. 22
 
 ### Task 2
-2.1: Code smell: 1. "Reduce the number of nested break and goto statements from 2 to 1 authorized." 
-It complains because loops should not have more than one break.
-
-Code smell 2."Complete the task associated to this "TODO" comment."
-It complains because it tracks TODO tags.
-
-Code smell 3."Add a "default" case to this switch statement."
-Default in a switch case is required to protect the system form future additions to enum.
-
-Code smell 4. "Define each identifier in a dedicated statement."
-The declarations may be confusing regarding type.
-
-
-2.2:/* TODO: svar på løsning, code smell:1 */ 
-Code smell 2: You just need to complete the task in the TODO comment,
-code smell 3: Adding a default case will solve the issue.
-
-Code smell 4: Declare the type on each line, separately.
-
+1.
+    * Smell 1: "Reduce the number of nested break and goto statements from 2 to 1 authorized." 
+      It complains because loops should not have more than one break.
+    * Smell 2: "Complete the task associated to this "TODO" comment."
+      It complains because it tracks TODO tags.
+    * Code smell 3."Add a "default" case to this switch statement."
+      Default in a switch case is required to protect the system form future additions to enum.
+    * Code smell 4. "Define each identifier in a dedicated statement."
+      The declarations may be confusing regarding type.
+2.
+    * Smell 1: /* TODO: svar på løsning, code smell:1 */ 
+    * Smell 2: You just need to complete the task in the TODO comment,
+    * Smell 3: Adding a default case will solve the issue.
+    * Smell 4: Declare the type on each line, separately.
 
 ### Task 3
 
