@@ -82,6 +82,11 @@ Easy task
 Hard task
 * Session id: `bftdZb`
 * https://cyber-dojo.org/kata/edit/bftdZb
+* Forked for implementing diagonals: https://cyber-dojo.org/kata/edit/HqDNUA
+
+It became clear after a while that the granularity of our tests should've been smaller.
+We should have done just a miniscule piece of functionality at a time.
+What we initially did was one major test succeeded by an iternity in refactoring phase.
 
 We tried to follow this cycle:
 ![tdd_cycle](./tdd.png)
