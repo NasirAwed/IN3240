@@ -86,5 +86,52 @@ Hard task
 We tried to follow this cycle:
 ![tdd_cycle](./tdd.png)
 
-Part 4
+Part 4 Static testing - Reviews 
 ======
+
+
+What is the purpose and benefits of reviews?
+
+The purpose is to find defects and bugs in the program you are developing. As the project progresses, so do the price of fixing a defect. So, the benefit is clearly saving both time and money.
+
+
+What are the fundamental steps for executing a formal review, e.g. an inspection?
+
+Number one is planning, the moderator assigns to the people who are participating their roles. Then comes the kick off, a moderator will give all the participants that is up to review.
+Individual preparation is the next stage. Here the participants will review the document. And note down any defects they find.
+At the review meeting, which is the following stage is where the participants give the findings, and the author takes notes.
+At the rework is where the author fixes the defects reported in the review meeting.
+Then the last stage is the follow-up, where the moderator checks if the defects has been fixed.
+
+
+ What different kinds of reviews do we have?
+
+We have Informal review, where it’s “informal”. Nothing is documented and can be two people discussing. Walkthrough is where a designer or a developer leads a team to go through the product and make comments on various defects or errors. A technical review is where a team of qualified personnel examine the appropriateness of the software product. And identify discrepancies.  The inspection is where qualified people review the product for bugs and defects, it will help the author to improve the software.
+
+
+
+Which roles participate in the different kinds of reviews and what are the responsibilities of the different roles?
+
+In informal review, we do not define roles. As the group can be small as 2 people.
+Walkthrough author who is responsible to request the walkthrough. The presenter is responsible for the agenda. Moderator is to make the Walkthrough happen. Then we have the reviewers, their job is to evaluate the product. Last but not least, we have the scribe, he or she will take notes, record errors, take down comments or unresolved questions during the walkthrough. 
+A technical review consists of a moderator, whose job is to conduct the review, collect the data, and plays a key part in every stage (not the rework stage).  Inspector is a role, where the person job is to find defects. From a general point of view and for the perspective of a expert.  The author provides information of the work product, responsible for fixing major defects, and minor defects. Then we have a reader, who guides the team through the product. Can also preform the duties of an inspector.
+The recorder records the defects found, he or she can also perform the duties of an inspector.
+
+ Are reviews an efficient means of quality assurance? Justify your answer.
+
+Yes, because if you choose to release product without doing any form of reviews. The chances of a defect in the product is high. And the price of fixing a product after-release is exponential higher than finding and fixing it during development. You also have no idea if the product actually solves the problem you design it for. In the worst-case scenario, you may have to scrap the software and start over.
+
+What are the factors for a successful performance of reviews?
+
+Be prepared for the meeting, reflect on the different roles of the participants, overall goals for the meeting. During the meeting you should aim for a conversation between equals. Hit the most important topics, be constructive. Give helpful feedback, illustrate clearly and avoid personal attacks.
+After the meeting, write down the targets you have agreed upon.   
+
+Which testing principle is followed when using reviews in the early stages of the development process?
+
+You need to know what you are testing. Why are you testing it, what to test, and how to test it.
+
+How are static analysis and reviews related?
+
+Both can be used to find defects and errors without actually running the code. Static analysis uses tools to find formal faults such as syntax errors or if the code is not the set standard for formatting. Unlike reviews, these tools makes static analysis unlimited because of automation.   
+
+
