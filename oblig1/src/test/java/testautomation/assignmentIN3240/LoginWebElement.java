@@ -16,11 +16,8 @@ public class LoginWebElement {
     PageFactory.initElements(driver, this);
   }
 
-
-	// Login
-	public void loginValidUser() {
-		driver.findElement(By.xpath("//*[@id=\"navbarColor01\"]/form/ul/li[2]/a")).click();
-		
-	}
-
+  // Login
+  public void loginValidUser() {
+    driver.findElement(By.xpath("//*[@id=\"navbarColor01\"]/form/ul/li[2]/a")).click();
+  }
 }
