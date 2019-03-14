@@ -94,10 +94,10 @@ public class Task2Customer {
      driver.findElement(By.xpath("/html/body/div/div/table/tbody/tr[9]/td[7]/a[1]")).click();
      //TimeUnit.SECONDS.sleep(5);
      //driver.findElement(By.xpath("/html/body/div/div/table/tbody/")).children();
+     
+     /* TODO fra Test Case 3 – Update customer: 5. Check that phone number is updated */
      List childs = (List) driver.findElements(By.xpath("/html/body/div/div/table/tbody/"));
-     for(List e: childs) {
-    	 
-     }
+     
      System.out.println(driver.findElement(By.xpath("//*[@id=\"Phone\"]")).getText());
 	//assertEquals(driver.findElement(By.xpath("//*[@id=\"Phone\"]")).getText(),"999999");
 
