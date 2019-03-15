@@ -95,9 +95,11 @@ Part 4 Static testing - Reviews
 ======
 
 
+
+
 What is the purpose and benefits of reviews?
 
-The purpose is to find defects and bugs in the program you are developing. As the project progresses, so do the price of fixing a defect. So, the benefit is clearly saving both time and money.
+The purpose is to find defects and bugs in the program you are developing. As the project progresses, so do the price of fixing a defect. So, the benefit is clearly saving both time and money. It looks at process as well. You will also find improvement to. Studies have shown that, reviews also increase productivity. 
 
 
 What are the fundamental steps for executing a formal review, e.g. an inspection?
@@ -124,19 +126,27 @@ The recorder records the defects found, he or she can also perform the duties of
 
  Are reviews an efficient means of quality assurance? Justify your answer.
 
-Yes, because if you choose to release product without doing any form of reviews. The chances of a defect in the product is high. And the price of fixing a product after-release is exponential higher than finding and fixing it during development. You also have no idea if the product actually solves the problem you design it for. In the worst-case scenario, you may have to scrap the software and start over.
+Yes, because if you choose to release product without doing any form of reviews. The chances of a defect in the product is high. And the price of fixing a product after-release is exponential higher than finding and fixing it during development. You also have no idea if the product actually solves the problem you design it for. In the worst-case scenario, you may have to scrap the software and start over. Automated unit testing, system test and much more is needed for a successful product. Not only reviews. 
 
 What are the factors for a successful performance of reviews?
 
 Be prepared for the meeting, reflect on the different roles of the participants, overall goals for the meeting. During the meeting you should aim for a conversation between equals. Hit the most important topics, be constructive. Give helpful feedback, illustrate clearly and avoid personal attacks.
 After the meeting, write down the targets you have agreed upon.   
 
+"Find a champion". A person who is qualified and enthusiastic.
+"Pick the things that really count". Choose relevant documents.
+"Explicitly plan and track review activities". You will be more effective this way.
+"Train participants". Everything will go much faster if everybody got a good overview of as much as possible.
+"Manage people issues". Again, don’t let it get personal, defects should be welcomed.
+"Follow the rules but keep it simple". Don’t change the rules, until you are sure it will be a benefit.
+"Continuously improve process and tools". Improve, adapt and evolve.
+"Report results". Send information to the team as fast as possible.
+"Just do it". Just do it
+
 Which testing principle is followed when using reviews in the early stages of the development process?
 
-You need to know what you are testing. Why are you testing it, what to test, and how to test it.
+You need to know what you are testing. Why are you testing it, what to test, and how to test it. Among 'the seven testing principles' the one applied in early reviews is 'early testing'. Its purpose is to define objectives and should be applied at as early as possible stage in the development.
 
 How are static analysis and reviews related?
 
-Both can be used to find defects and errors without actually running the code. Static analysis uses tools to find formal faults such as syntax errors or if the code is not the set standard for formatting. Unlike reviews, these tools makes static analysis unlimited because of automation.   
-
-
+Both can be used to find defects and errors without actually running the code. Static analysis uses tools to find formal faults such as syntax errors or if the code is not the set standard for formatting. Unlike reviews, these tools make static analysis unlimited because of automation.   
