@@ -87,19 +87,37 @@ public class Task2Customer {
      LoginWebElement login = new LoginWebElement(driver);
      login.loginValidUser();
      login();
-     driver.findElement(By.xpath("/html/body/div/div/table/tbody/tr[9]/td[7]/a[1]")).click();
+     /*driver.findElement(By.xpath("/html/body/div/div/table/tbody/tr[9]/td[7]/a[1]")).click();
      driver.findElement(By.xpath("//*[@id=\"Phone\"]")).clear();
      driver.findElement(By.xpath("//*[@id=\"Phone\"]")).sendKeys("999999");
      driver.findElement(By.xpath("/html/body/div/form/div/div[7]/div/input")).click();
-     driver.findElement(By.xpath("/html/body/div/div/table/tbody/tr[9]/td[7]/a[1]")).click();
+     driver.findElement(By.xpath("/html/body/div/div/table/tbody/tr[9]/td[7]/a[1]")).click();*/
      //TimeUnit.SECONDS.sleep(5);
      //driver.findElement(By.xpath("/html/body/div/div/table/tbody/")).children();
      
      /* TODO fra Test Case 3 – Update customer: 5. Check that phone number is updated */
-     List childs = (List) driver.findElements(By.xpath("/html/body/div/div/table/tbody/"));
      
-     System.out.println(driver.findElement(By.xpath("//*[@id=\"Phone\"]")).getText());
-	//assertEquals(driver.findElement(By.xpath("//*[@id=\"Phone\"]")).getText(),"999999");
+     //driver.findElement(By.xpath("/html/body/div/div/table/tbody"));
+     String res = driver.findElement(By.xpath("/html/body/div/div/table/tbody/tr[2]/td[1]")).getText();
+    
+     int i = 2;
+     while(res!=null) {
+         res= driver.findElement(By.xpath("/html/body/div/div/table/tbody/tr["+ i + "]/td[1]")).getText();
+         if(res.equals("NN")) {
+        	 System.out.println(res);
+        	 break;
+         }
+         else {
+         i++;
+         }
+     }
+     
+    driver.findElement(By.xpath("/html/body/div/div/table/tbody/tr["+ i + "]/td[7]/a[1]")).click();
+    driver.findElement(By.xpath("//*[@id=\"Phone\"]")).clear();
+    driver.findElement(By.xpath("//*[@id=\"Phone\"]")).sendKeys("999999");
+    driver.findElement(By.xpath("/html/body/div/form/div/div[7]/div/input")).click();
+	assertEquals(driver.findElement(By.xpath("/html/body/div/div/table/tbody/tr["+ i + "]/td[5]")).getText(),"999999");
+	
 
      
     /** fill in the code to complete the test method Call login method from LoginWebElement.java */
