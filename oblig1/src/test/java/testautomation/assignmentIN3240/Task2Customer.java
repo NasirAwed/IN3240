@@ -16,6 +16,7 @@ import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathFactory;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -32,15 +33,13 @@ public class Task2Customer {
 
   @BeforeClass
   public void beforeClass() {
-    /**
-     * Test report will be generated to below path This path (C:\\Reports\\IN3240\\Task1.html) for
-     * Windows. For Mac/Linux you need to change path
-     */
-    report = new ExtentReports("C:\\Reports\\IN3240\\Task2.html");
+    report = new ExtentReports("Task2.html");
     test = report.startTest("Task 2");
+
     driver = new ChromeDriver();
     test.log(LogStatus.INFO, "Browser started");
     driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+    driver.manage().window().setSize(new Dimension(1920, 1080)); // for my linux shit
     driver.manage().window().maximize();
     driver.get("https://itera-qa.azurewebsites.net/");
   }
