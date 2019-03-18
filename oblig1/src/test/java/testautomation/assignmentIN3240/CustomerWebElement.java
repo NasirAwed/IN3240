@@ -1,5 +1,6 @@
 package testautomation.assignmentIN3240;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -18,7 +19,7 @@ public class CustomerWebElement {
   }
 
   public void create() {
-    /** fill in the code to complete the method */
+    driver.findElement(By.xpath("/html/body/div/div/p[1]/a")).click();
   }
 
   public void findCustomer() {
