@@ -4,3 +4,4 @@
 .project
 *.png
 *.html
+.DS_Store
