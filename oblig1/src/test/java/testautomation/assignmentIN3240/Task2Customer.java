@@ -3,9 +3,18 @@ package testautomation.assignmentIN3240;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
+
+import net.bytebuddy.dynamic.scaffold.MethodGraph.NodeList;
+
+import static org.testng.Assert.assertEquals;
+
 import java.awt.List;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
+
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathFactory;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -36,59 +45,87 @@ public class Task2Customer {
     driver.get("https://itera-qa.azurewebsites.net/");
   }
 
-  @Test(priority = 1, description = "Login with valid user")
-  public void login() {
-    LoginWebElement login = new LoginWebElement(driver);
-    login.loginValidUser();
+
+	@Test(priority = 1, description = "Login with valid user")
+	public void login() {
+		LoginWebElement login = new LoginWebElement(driver);
+		login.loginValidUser();
+		// Create a new instance of the LoginWebElement page object
+		WebElement username  = driver.findElement(By.xpath("//*[@id=\"Username\"]"));
+		username.sendKeys("fakeUsername1");
+		WebElement password  = driver.findElement(By.xpath("//*[@id=\"Password\"]"));
+		password.sendKeys("fakeultrahackablepassword1");
+		driver.findElement(By.xpath("/html/body/div/div[1]/form/table/tbody/tr[7]/td[2]/input[1]")).click();
+		
+	}
+	
+	@Test(priority = 2, description = "Create customer")
+	public void create() {
+		
+		// Create a new instance of the CustomerWebElement page object
+		CustomerWebElement customer = new CustomerWebElement(driver);
+		customer.create();
+		
+		
+		driver.findElement(By.xpath("//*[@id=\"Name\"]")).sendKeys("NN");
+		driver.findElement(By.xpath("//*[@id=\"Company\"]")).sendKeys("NN");
+		driver.findElement(By.xpath("//*[@id=\"Address\"] ")).sendKeys("adresse");
+		driver.findElement(By.xpath("//*[@id=\"City\"]")).sendKeys("oslo");
+		driver.findElement(By.xpath("//*[@id=\"Phone\"]")).sendKeys("9329233");
+		driver.findElement(By.xpath("//*[@id=\"Email\"]")).sendKeys("fake@hotmailcom");
+		driver.findElement(By.xpath("/html/body/div/form/div/div[7]/div/input")).click();
+		
+		
+		
+	}
+	
+	@Test(priority = 3, description = "Update customer")
+	public void update() throws InterruptedException {
+
+
     // Create a new instance of the LoginWebElement page object
-    WebElement username = driver.findElement(By.xpath("//*[@id=\"Username\"]"));
-    username.sendKeys("fakeUsername1");
-    WebElement password = driver.findElement(By.xpath("//*[@id=\"Password\"]"));
-    password.sendKeys("fakeultrahackablepassword1");
-    driver
-        .findElement(By.xpath("/html/body/div/div[1]/form/table/tbody/tr[7]/td[2]/input[1]"))
-        .click();
-  }
-
-  @Test(priority = 2, description = "Create customer")
-  public void create() {
-
-    // Create a new instance of the CustomerWebElement page object
-    CustomerWebElement customer = new CustomerWebElement(driver);
-    customer.create();
-
-    driver.findElement(By.xpath("//*[@id=\"Name\"]")).sendKeys("NN");
-    driver.findElement(By.xpath("//*[@id=\"Company\"]")).sendKeys("NN");
-    driver.findElement(By.xpath("//*[@id=\"Address\"] ")).sendKeys("adresse");
-    driver.findElement(By.xpath("//*[@id=\"City\"]")).sendKeys("oslo");
-    driver.findElement(By.xpath("//*[@id=\"Phone\"]")).sendKeys("9329233");
-    driver.findElement(By.xpath("//*[@id=\"Email\"]")).sendKeys("fake@hotmailcom");
-    driver.findElement(By.xpath("/html/body/div/form/div/div[7]/div/input")).click();
-  }
-
-  @Test(priority = 3, description = "Update customer")
-  public void update() throws InterruptedException {
-
-    // Create a new instance of the LoginWebElement page object
-    LoginWebElement login = new LoginWebElement(driver);
-    login.loginValidUser();
-    login();
-    driver.findElement(By.xpath("/html/body/div/div/table/tbody/tr[9]/td[7]/a[1]")).click();
+     LoginWebElement login = new LoginWebElement(driver);
+     login.loginValidUser();
+     login();
+     /*driver.findElement(By.xpath("/html/body/div/div/table/tbody/tr[9]/td[7]/a[1]")).click();
+     driver.findElement(By.xpath("//*[@id=\"Phone\"]")).clear();
+     driver.findElement(By.xpath("//*[@id=\"Phone\"]")).sendKeys("999999");
+     driver.findElement(By.xpath("/html/body/div/form/div/div[7]/div/input")).click();
+     driver.findElement(By.xpath("/html/body/div/div/table/tbody/tr[9]/td[7]/a[1]")).click();*/
+     //TimeUnit.SECONDS.sleep(5);
+     //driver.findElement(By.xpath("/html/body/div/div/table/tbody/")).children();
+     
+     /* TODO fra Test Case 3 – Update customer: 5. Check that phone number is updated */
+     
+     //driver.findElement(By.xpath("/html/body/div/div/table/tbody"));
+     String res = driver.findElement(By.xpath("/html/body/div/div/table/tbody/tr[2]/td[1]")).getText();
+    
+     int i = 2;
+     while(res!=null) {
+         res= driver.findElement(By.xpath("/html/body/div/div/table/tbody/tr["+ i + "]/td[1]")).getText();
+         if(res.equals("NN")) {
+        	 System.out.println(res);
+        	 break;
+         }
+         else {
+         i++;
+         }
+     }
+     
+    driver.findElement(By.xpath("/html/body/div/div/table/tbody/tr["+ i + "]/td[7]/a[1]")).click();
     driver.findElement(By.xpath("//*[@id=\"Phone\"]")).clear();
     driver.findElement(By.xpath("//*[@id=\"Phone\"]")).sendKeys("999999");
     driver.findElement(By.xpath("/html/body/div/form/div/div[7]/div/input")).click();
-    driver.findElement(By.xpath("/html/body/div/div/table/tbody/tr[9]/td[7]/a[1]")).click();
-    // TimeUnit.SECONDS.sleep(5);
-    // driver.findElement(By.xpath("/html/body/div/div/table/tbody/")).children();
+	assertEquals(driver.findElement(By.xpath("/html/body/div/div/table/tbody/tr["+ i + "]/td[5]")).getText(),"999999");
+	
 
-    /* TODO fra Test Case 3 – Update customer: 5. Check that phone number is updated */
-    List childs = (List) driver.findElements(By.xpath("/html/body/div/div/table/tbody/"));
-
-    System.out.println(driver.findElement(By.xpath("//*[@id=\"Phone\"]")).getText());
-    // assertEquals(driver.findElement(By.xpath("//*[@id=\"Phone\"]")).getText(),"999999");
-
+     
     /** fill in the code to complete the test method Call login method from LoginWebElement.java */
   }
+
+ 
+	
+ 
 
   @Test(priority = 4, description = "Delete customer")
   public void delete() {
