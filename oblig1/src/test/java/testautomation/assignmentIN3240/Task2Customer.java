@@ -60,14 +60,16 @@ public class Task2Customer {
 	}
 	
 	@Test(priority = 2, description = "Create customer")
-	public void create() {
+	public void create()  {
 		
 		// Create a new instance of the CustomerWebElement page object
 		CustomerWebElement customer = new CustomerWebElement(driver);
 		customer.create();
 		
 		
+		System.out.println("1");
 		driver.findElement(By.xpath("//*[@id=\"Name\"]")).sendKeys("NN");
+		
 		driver.findElement(By.xpath("//*[@id=\"Company\"]")).sendKeys("NN");
 		driver.findElement(By.xpath("//*[@id=\"Address\"] ")).sendKeys("adresse");
 		driver.findElement(By.xpath("//*[@id=\"City\"]")).sendKeys("oslo");
@@ -87,17 +89,8 @@ public class Task2Customer {
      LoginWebElement login = new LoginWebElement(driver);
      login.loginValidUser();
      login();
-     /*driver.findElement(By.xpath("/html/body/div/div/table/tbody/tr[9]/td[7]/a[1]")).click();
-     driver.findElement(By.xpath("//*[@id=\"Phone\"]")).clear();
-     driver.findElement(By.xpath("//*[@id=\"Phone\"]")).sendKeys("999999");
-     driver.findElement(By.xpath("/html/body/div/form/div/div[7]/div/input")).click();
-     driver.findElement(By.xpath("/html/body/div/div/table/tbody/tr[9]/td[7]/a[1]")).click();*/
-     //TimeUnit.SECONDS.sleep(5);
-     //driver.findElement(By.xpath("/html/body/div/div/table/tbody/")).children();
      
-     /* TODO fra Test Case 3 – Update customer: 5. Check that phone number is updated */
-     
-     //driver.findElement(By.xpath("/html/body/div/div/table/tbody"));
+    
      String res = driver.findElement(By.xpath("/html/body/div/div/table/tbody/tr[2]/td[1]")).getText();
     
      int i = 2;
