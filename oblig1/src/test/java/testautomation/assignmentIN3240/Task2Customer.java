@@ -122,9 +122,13 @@ public class Task2Customer {
 
   @Test(priority = 4, description = "Delete customer")
   public void delete() {
-    /**
-     * fill in the code to complete the test method Call delete method from CsutomerWebElement.java
-     */
+	CustomerWebElement customer = new CustomerWebElement(driver);
+	customer.findCustomer().click();
+	driver.findElement(By.xpath("/html/body/div/div/form/div/input")).click();
+	driver.findElement(By.xpath("//*[@id=\"navbarColor01\"]/form/ul/li[2]/a")).click();	
+	
+	  
+   
   }
 
   /** For Mac/Linux you need to change path in ScreenShots.java */

@@ -22,8 +22,22 @@ public class CustomerWebElement {
     driver.findElement(By.xpath("/html/body/div/div/p[1]/a")).click();
   }
 
-  public void findCustomer() {
-    /** fill in the code to complete the method */
+  public WebElement findCustomer() {
+    String res = driver.findElement(By.xpath("/html/body/div/div/table/tbody/tr[2]/td[1]")).getText();
+    
+     int i = 2;
+     while(res!=null) {
+         res= driver.findElement(By.xpath("/html/body/div/div/table/tbody/tr["+ i + "]/td[1]")).getText();
+         if(res.equals("NN")) {
+        	 System.out.println(res);
+        	 break;
+         }
+         else {
+         i++;
+         }
+     }
+   
+     return driver.findElement(By.xpath("/html/body/div/div/table/tbody/tr["+ i + "]/td[7]//a[3]"));
   }
 
   public void update() {
