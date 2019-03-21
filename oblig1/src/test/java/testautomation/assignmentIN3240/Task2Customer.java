@@ -37,23 +37,19 @@ public class Task2Customer {
     driver.get("https://itera-qa.azurewebsites.net/");
   }
 
-  private void doLoginProcedure() {
-    // Click login button
-    driver.findElement(By.xpath("//*[@id=\"navbarColor01\"]/form/ul/li[2]/a")).click();
-
-    // Enter login credentials
-    driver.findElement(By.xpath("//*[@id=\"Username\"]")).sendKeys("fakeUsername1");
-    driver.findElement(By.xpath("//*[@id=\"Password\"]")).sendKeys("fakeultrahackablepassword1");
-
-    // Click login submit
-    driver
-        .findElement(By.xpath("/html/body/div/div[1]/form/table/tbody/tr[7]/td[2]/input[1]"))
-        .click();
-  }
-
   @Test(priority = 1, description = "Login with valid user")
   public void login() {
-    doLoginProcedure();
+	    // Click login button
+	    driver.findElement(By.xpath("//*[@id=\"navbarColor01\"]/form/ul/li[2]/a")).click();
+
+	    // Enter login credentials
+	    driver.findElement(By.xpath("//*[@id=\"Username\"]")).sendKeys("fakeUsername1");
+	    driver.findElement(By.xpath("//*[@id=\"Password\"]")).sendKeys("fakeultrahackablepassword1");
+
+	    // Click login submit
+	    driver
+	        .findElement(By.xpath("/html/body/div/div[1]/form/table/tbody/tr[7]/td[2]/input[1]"))
+	        .click();
 
     // Confirm welcome screen
     WebElement welcomeLabel = driver.findElement(By.xpath("/html/body/div/div/h3"));
@@ -65,7 +61,6 @@ public class Task2Customer {
     CustomerWebElement customer = new CustomerWebElement(driver);
     customer.create();
 
-    System.out.println("1");
     driver.findElement(By.xpath("//*[@id=\"Name\"]")).sendKeys("NN");
 
     driver.findElement(By.xpath("//*[@id=\"Company\"]")).sendKeys("NN");
@@ -78,9 +73,8 @@ public class Task2Customer {
 
   @Test(priority = 3, description = "Update customer")
   public void update() throws InterruptedException {
-    LoginWebElement login = new LoginWebElement(driver);
-    login.loginValidUser();
-    doLoginProcedure();
+    // Trusting preconditions (being logged in) from previous tests.
+    // Might be a bad idea, but it works in this application.
 
     String res =
         driver.findElement(By.xpath("/html/body/div/div/table/tbody/tr[2]/td[1]")).getText();
@@ -92,7 +86,6 @@ public class Task2Customer {
               .findElement(By.xpath("/html/body/div/div/table/tbody/tr[" + i + "]/td[1]"))
               .getText();
       if (res.equals("NN")) {
-        System.out.println(res);
         break;
       } else {
         i++;
