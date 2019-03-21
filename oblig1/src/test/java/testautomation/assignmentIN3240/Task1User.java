@@ -10,7 +10,6 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
@@ -40,24 +39,25 @@ public class Task1User {
 
   @Test
   public void createNewUser() throws InterruptedException {
+    // Click sign-up button
+    driver.findElement(By.xpath("//*[@id=\"navbarColor01\"]/form/ul/li[1]/a")).click();
 
-    // Create a new instance of the NewUserWebElement page object
-    NewUserWebElement user = new NewUserWebElement(driver);
-    user.clickSignUpBtn();
-    WebElement nameElemen = driver.findElement(By.xpath("//*[@id=\"FirstName\"]"));
-    nameElemen.sendKeys("FirstNamefake1");
-    WebElement surName = driver.findElement(By.xpath("//*[@id=\"Surname\"]"));
-    surName.sendKeys("surnamefake1");
-    WebElement eMail = driver.findElement(By.xpath("//*[@id=\"E_post\"]"));
-    eMail.sendKeys("FakeEmail1@hotmail.com");
-    WebElement phonenr = driver.findElement(By.xpath("//*[@id=\"Mobile\"]"));
-    phonenr.sendKeys("9932939");
-    WebElement userName = driver.findElement(By.xpath("//*[@id=\"Username\"]"));
-    userName.sendKeys("fakeUsername1");
-    WebElement password = driver.findElement(By.xpath("//*[@id=\"Password\"]"));
-    password.sendKeys("fakeultrahackablepassword1");
-    WebElement confirmPassword = driver.findElement(By.xpath("//*[@id=\"ConfirmPassword\"]"));
-    confirmPassword.sendKeys("fakeultrahackablepassword1");
+    // Enter full name
+    driver.findElement(By.xpath("//*[@id=\"FirstName\"]")).sendKeys("FirstNamefake1");
+    driver.findElement(By.xpath("//*[@id=\"Surname\"]")).sendKeys("surnamefake1");
+
+    // Contact info
+    driver.findElement(By.xpath("//*[@id=\"E_post\"]")).sendKeys("FakeEmail1@hotmail.com");
+    driver.findElement(By.xpath("//*[@id=\"Mobile\"]")).sendKeys("9932939");
+
+    // Login credentials
+    driver.findElement(By.xpath("//*[@id=\"Username\"]")).sendKeys("fakeUsername1");
+    driver.findElement(By.xpath("//*[@id=\"Password\"]")).sendKeys("fakeultrahackablepassword1");
+    driver
+        .findElement(By.xpath("//*[@id=\"ConfirmPassword\"]"))
+        .sendKeys("fakeultrahackablepassword1");
+
+    // Submit
     driver.findElement(By.xpath("//*[@id=\"submit\"]")).click();
 
     TimeUnit.SECONDS.sleep(5);
