@@ -10,7 +10,6 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
@@ -31,20 +30,21 @@ public class Task2Customer {
     driver = new ChromeDriver();
     test.log(LogStatus.INFO, "Browser started");
     driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-    driver.manage().window().setSize(new Dimension(1920, 1080)); // for my linux shit
+    driver.manage().window().setSize(new Dimension(1920, 1080)); // maximize had no effect for me
     driver.manage().window().maximize();
     driver.get("https://itera-qa.azurewebsites.net/");
   }
 
   @Test(priority = 1, description = "Login with valid user")
   public void login() {
-    LoginWebElement login = new LoginWebElement(driver);
-    login.loginValidUser();
-    // Create a new instance of the LoginWebElement page object
-    WebElement username = driver.findElement(By.xpath("//*[@id=\"Username\"]"));
-    username.sendKeys("fakeUsername1");
-    WebElement password = driver.findElement(By.xpath("//*[@id=\"Password\"]"));
-    password.sendKeys("fakeultrahackablepassword1");
+    // Click login button
+    driver.findElement(By.xpath("//*[@id=\"navbarColor01\"]/form/ul/li[2]/a")).click();
+
+    // Enter login credentials
+    driver.findElement(By.xpath("//*[@id=\"Username\"]")).sendKeys("fakeUsername1");
+    driver.findElement(By.xpath("//*[@id=\"Password\"]")).sendKeys("fakeultrahackablepassword1");
+
+    // Click login submit
     driver
         .findElement(By.xpath("/html/body/div/div[1]/form/table/tbody/tr[7]/td[2]/input[1]"))
         .click();
@@ -52,8 +52,6 @@ public class Task2Customer {
 
   @Test(priority = 2, description = "Create customer")
   public void create() {
-
-    // Create a new instance of the CustomerWebElement page object
     CustomerWebElement customer = new CustomerWebElement(driver);
     customer.create();
 
@@ -70,11 +68,9 @@ public class Task2Customer {
 
   @Test(priority = 3, description = "Update customer")
   public void update() throws InterruptedException {
-
-    // Create a new instance of the LoginWebElement page object
     LoginWebElement login = new LoginWebElement(driver);
     login.loginValidUser();
-    login();
+    login(); // TODO isn't this test run automatically by TestNG anyway?
 
     String res =
         driver.findElement(By.xpath("/html/body/div/div/table/tbody/tr[2]/td[1]")).getText();
@@ -104,6 +100,7 @@ public class Task2Customer {
         "999999");
 
     /** fill in the code to complete the test method Call login method from LoginWebElement.java */
+    // TODO ^ what is this comment?
   }
 
   @Test(priority = 4, description = "Delete customer")
@@ -114,8 +111,6 @@ public class Task2Customer {
     driver.findElement(By.xpath("//*[@id=\"navbarColor01\"]/form/ul/li[2]/a")).click();
   }
 
-  /** For Mac/Linux you need to change path in ScreenShots.java */
-
   // Take a screenShots if test fail
   @AfterMethod
   public void tearDown(ITestResult testResult) throws IOException {
@@ -125,6 +120,7 @@ public class Task2Customer {
       test.log(LogStatus.FAIL, "TASK 2 - FAILED", imagePath);
     }
   }
+
   // Take a screenShots if test passed
   @AfterMethod
   public void Summary(ITestResult summary) throws IOException {
