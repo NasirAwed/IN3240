@@ -1,7 +1,5 @@
 package testautomation.assignmentIN3240;
 
-import static org.testng.Assert.assertEquals;
-
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
@@ -63,11 +61,10 @@ public class Task1User {
     driver.findElement(By.xpath("//*[@id=\"submit\"]")).click();
 
     // Confirm registration
-    String successLabel = driver.findElement(By.xpath("/html/body/div/form/div/div[9]/div/label")).getText();
+    String successLabel =
+        driver.findElement(By.xpath("/html/body/div/form/div/div[9]/div/label")).getText();
     Assert.assertTrue(successLabel.length() > 0, "Registration not successfull");
   }
-
-  /** For Mac/Linux you need to change path in ScreenShots.java */
 
   // Take a screenShots if test fail
   @AfterMethod
