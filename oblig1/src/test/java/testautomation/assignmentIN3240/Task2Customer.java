@@ -39,17 +39,17 @@ public class Task2Customer {
 
   @Test(priority = 1, description = "Login with valid user")
   public void login() {
-	    // Click login button
-	    driver.findElement(By.xpath("//*[@id=\"navbarColor01\"]/form/ul/li[2]/a")).click();
+    // Click login button
+    driver.findElement(By.xpath("//*[@id=\"navbarColor01\"]/form/ul/li[2]/a")).click();
 
-	    // Enter login credentials
-	    driver.findElement(By.xpath("//*[@id=\"Username\"]")).sendKeys("fakeUsername1");
-	    driver.findElement(By.xpath("//*[@id=\"Password\"]")).sendKeys("fakeultrahackablepassword1");
+    // Enter login credentials
+    driver.findElement(By.xpath("//*[@id=\"Username\"]")).sendKeys("fakeUsername1");
+    driver.findElement(By.xpath("//*[@id=\"Password\"]")).sendKeys("fakeultrahackablepassword1");
 
-	    // Click login submit
-	    driver
-	        .findElement(By.xpath("/html/body/div/div[1]/form/table/tbody/tr[7]/td[2]/input[1]"))
-	        .click();
+    // Click login submit
+    driver
+        .findElement(By.xpath("/html/body/div/div[1]/form/table/tbody/tr[7]/td[2]/input[1]"))
+        .click();
 
     // Confirm welcome screen
     WebElement welcomeLabel = driver.findElement(By.xpath("/html/body/div/div/h3"));
@@ -58,17 +58,24 @@ public class Task2Customer {
 
   @Test(priority = 2, description = "Create customer")
   public void create() {
-    CustomerWebElement customer = new CustomerWebElement(driver);
-    customer.create();
+    // Press create user button
+    driver.findElement(By.xpath("/html/body/div/div/p[1]/a")).click();
 
-    driver.findElement(By.xpath("//*[@id=\"Name\"]")).sendKeys("NN");
-
-    driver.findElement(By.xpath("//*[@id=\"Company\"]")).sendKeys("NN");
+    // Enter user data
+    String name = "Big Pizza";
+    String company = "Free Food";
+    driver.findElement(By.xpath("//*[@id=\"Name\"]")).sendKeys(name);
+    driver.findElement(By.xpath("//*[@id=\"Company\"]")).sendKeys(company);
     driver.findElement(By.xpath("//*[@id=\"Address\"] ")).sendKeys("adresse");
     driver.findElement(By.xpath("//*[@id=\"City\"]")).sendKeys("oslo");
     driver.findElement(By.xpath("//*[@id=\"Phone\"]")).sendKeys("9329233");
     driver.findElement(By.xpath("//*[@id=\"Email\"]")).sendKeys("fake@hotmailcom");
+
+    // Submit
     driver.findElement(By.xpath("/html/body/div/form/div/div[7]/div/input")).click();
+
+    // Confirm created user
+    driver.findElement(By.xpath("//*[contains(text(),'poopie')]"));
   }
 
   @Test(priority = 3, description = "Update customer")
