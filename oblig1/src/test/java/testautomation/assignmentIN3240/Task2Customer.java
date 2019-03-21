@@ -10,7 +10,9 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -35,8 +37,7 @@ public class Task2Customer {
     driver.get("https://itera-qa.azurewebsites.net/");
   }
 
-  @Test(priority = 1, description = "Login with valid user")
-  public void login() {
+  private void doLoginProcedure() {
     // Click login button
     driver.findElement(By.xpath("//*[@id=\"navbarColor01\"]/form/ul/li[2]/a")).click();
 
@@ -48,6 +49,15 @@ public class Task2Customer {
     driver
         .findElement(By.xpath("/html/body/div/div[1]/form/table/tbody/tr[7]/td[2]/input[1]"))
         .click();
+  }
+
+  @Test(priority = 1, description = "Login with valid user")
+  public void login() {
+    doLoginProcedure();
+
+    // Confirm welcome screen
+    WebElement welcomeLabel = driver.findElement(By.xpath("/html/body/div/div/h3"));
+    Assert.assertNotNull(welcomeLabel, "Failed to login successfully");
   }
 
   @Test(priority = 2, description = "Create customer")
@@ -70,7 +80,7 @@ public class Task2Customer {
   public void update() throws InterruptedException {
     LoginWebElement login = new LoginWebElement(driver);
     login.loginValidUser();
-    login(); // TODO isn't this test run automatically by TestNG anyway?
+    doLoginProcedure();
 
     String res =
         driver.findElement(By.xpath("/html/body/div/div/table/tbody/tr[2]/td[1]")).getText();
