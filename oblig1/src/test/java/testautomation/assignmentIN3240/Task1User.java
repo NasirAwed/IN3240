@@ -6,11 +6,13 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 import java.io.IOException;
+import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -51,7 +53,7 @@ public class Task1User {
     driver.findElement(By.xpath("//*[@id=\"Mobile\"]")).sendKeys("9932939");
 
     // Login credentials
-    driver.findElement(By.xpath("//*[@id=\"Username\"]")).sendKeys("fakeUsername1");
+    driver.findElement(By.xpath("//*[@id=\"Username\"]")).sendKeys(UUID.randomUUID().toString());
     driver.findElement(By.xpath("//*[@id=\"Password\"]")).sendKeys("fakeultrahackablepassword1");
     driver
         .findElement(By.xpath("//*[@id=\"ConfirmPassword\"]"))
@@ -60,16 +62,9 @@ public class Task1User {
     // Submit
     driver.findElement(By.xpath("//*[@id=\"submit\"]")).click();
 
-    TimeUnit.SECONDS.sleep(5);
-    String string =
-        driver.findElement(By.xpath("/html/body/div/form/div/div[9]/div/label")).getText();
-    if (string.length() != 0) {
-      assertEquals(
-          driver.findElement(By.xpath("/html/body/div/form/div/div[9]/div/label")).getText(),
-          "Registration Successful");
-    } else {
-      System.out.println("String 1 is null or empty?");
-    }
+    // Confirm registration
+    String successLabel = driver.findElement(By.xpath("/html/body/div/form/div/div[9]/div/label")).getText();
+    Assert.assertTrue(successLabel.length() > 0, "Registration not successfull");
   }
 
   /** For Mac/Linux you need to change path in ScreenShots.java */
