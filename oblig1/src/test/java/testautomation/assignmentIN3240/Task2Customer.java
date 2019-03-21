@@ -75,7 +75,16 @@ public class Task2Customer {
     driver.findElement(By.xpath("/html/body/div/form/div/div[7]/div/input")).click();
 
     // Confirm created user
-    driver.findElement(By.xpath("//*[contains(text(),'poopie')]"));
+    // This method is lazy and only checks uniqueness of name+company combination
+    WebElement customer =
+        driver.findElement(
+            By.xpath(
+                "//*[contains(text(),'"
+                    + customerName
+                    + "')]/..//*[contains(text(),'"
+                    + companyName
+                    + "')]"));
+    Assert.assertNotNull(customer, "Can't find the created customer");
   }
 
   @Test(priority = 3, description = "Update customer")
