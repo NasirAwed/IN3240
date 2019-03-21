@@ -22,7 +22,7 @@ public class CustomerWebElement {
     driver.findElement(By.xpath("/html/body/div/div/p[1]/a")).click();
   }
 
-  public WebElement findCustomer() {
+  public WebElement findCustomer(String customerName) {
     String res =
         driver.findElement(By.xpath("/html/body/div/div/table/tbody/tr[2]/td[1]")).getText();
 
@@ -32,8 +32,7 @@ public class CustomerWebElement {
           driver
               .findElement(By.xpath("/html/body/div/div/table/tbody/tr[" + i + "]/td[1]"))
               .getText();
-      if (res.equals("NN")) {
-        System.out.println(res);
+      if (res.equals(customerName)) {
         break;
       } else {
         i++;

@@ -23,6 +23,8 @@ public class Task2Customer {
   WebDriver driver;
   private static ExtentReports report;
   private static ExtentTest test;
+  private String customerName = "Big Pizza";
+  private String companyName = "Free Food";
 
   @BeforeClass
   public void beforeClass() {
@@ -62,10 +64,8 @@ public class Task2Customer {
     driver.findElement(By.xpath("/html/body/div/div/p[1]/a")).click();
 
     // Enter user data
-    String name = "Big Pizza";
-    String company = "Free Food";
-    driver.findElement(By.xpath("//*[@id=\"Name\"]")).sendKeys(name);
-    driver.findElement(By.xpath("//*[@id=\"Company\"]")).sendKeys(company);
+    driver.findElement(By.xpath("//*[@id=\"Name\"]")).sendKeys(customerName);
+    driver.findElement(By.xpath("//*[@id=\"Company\"]")).sendKeys(companyName);
     driver.findElement(By.xpath("//*[@id=\"Address\"] ")).sendKeys("adresse");
     driver.findElement(By.xpath("//*[@id=\"City\"]")).sendKeys("oslo");
     driver.findElement(By.xpath("//*[@id=\"Phone\"]")).sendKeys("9329233");
@@ -92,7 +92,7 @@ public class Task2Customer {
           driver
               .findElement(By.xpath("/html/body/div/div/table/tbody/tr[" + i + "]/td[1]"))
               .getText();
-      if (res.equals("NN")) {
+      if (res.equals(customerName)) {
         break;
       } else {
         i++;
@@ -116,7 +116,7 @@ public class Task2Customer {
   @Test(priority = 4, description = "Delete customer")
   public void delete() {
     CustomerWebElement customer = new CustomerWebElement(driver);
-    customer.findCustomer().click();
+    customer.findCustomer(customerName).click();
     driver.findElement(By.xpath("/html/body/div/div/form/div/input")).click();
     driver.findElement(By.xpath("//*[@id=\"navbarColor01\"]/form/ul/li[2]/a")).click();
   }
