@@ -1,5 +1,5 @@
 all:
-	javac Main.java Primes.java
+	javac Main.java Primer.java
 
 run:
 	@java Main

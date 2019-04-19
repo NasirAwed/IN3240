@@ -1,8 +1,11 @@
 class Main {
   public static void main(String[] args) {
-    Primes p = new Primes();
+    Primer p = new Primer();
     int N = 10;
+    int[] primes;
 
-    System.out.println(p.getPrimes(N));
+    primes = p.getPrimes(N);
+    for (int i = 0; i < primes.length; i++)
+      System.out.println(primes[i]);
   }
 }
