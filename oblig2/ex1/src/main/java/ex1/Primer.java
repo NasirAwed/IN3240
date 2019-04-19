@@ -3,7 +3,7 @@ package ex1;
 import java.util.Arrays;
 
 class Primer {
-  public boolean isPrime(int x) {
+  public static boolean isPrime(int x) {
     boolean[] primeFlags;
 
     primeFlags = new boolean[x + 1];
@@ -12,7 +12,7 @@ class Primer {
     return primeFlags[x];
   }
 
-  public int[] getPrimesUpTo(int N) {
+  public static int[] getPrimesUpTo(int N) {
     boolean[] primeFlags;
     int numFound;
 
@@ -22,7 +22,7 @@ class Primer {
     return listPrimesFromFlags(primeFlags, numFound);
   }
 
-  private int flagPrimesUpTo(boolean[] flags) {
+  private static int flagPrimesUpTo(boolean[] flags) {
     int numFound;
 
     assumePrimesTrue(flags);
@@ -43,13 +43,13 @@ class Primer {
     return numFound;
   }
 
-  private void assumePrimesTrue(boolean[] v) {
+  private static void assumePrimesTrue(boolean[] v) {
     Arrays.fill(v, true);
     for (int i = 0; i < 2 && i < v.length; i++)
       v[i] = false;
   }
 
-  private int[] listPrimesFromFlags(boolean[] flags, int truths) {
+  private static int[] listPrimesFromFlags(boolean[] flags, int truths) {
     int[] primes;
     int idx;
 

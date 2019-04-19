@@ -6,20 +6,17 @@ import static org.junit.Assert.*;
 public class PrimerTest {
   @Test
   public void testAppHasAGreeting() {
-    Primer p = new Primer();
     int N = 100;
     int[] primes;
 
-    primes = p.getPrimesUpTo(N);
+    primes = Primer.getPrimesUpTo(N);
     for (int i = 0; i < primes.length; i++)
       System.out.println(primes[i]);
 
-    System.out.println(p.isPrime(0));
-    System.out.println(p.isPrime(1));
-    System.out.println(p.isPrime(2));
-    System.out.println(p.isPrime(3));
-    System.out.println(p.isPrime(4));
-
-    assertEquals(2, 3);
+    assertEquals(Primer.isPrime(0), false);
+    assertEquals(Primer.isPrime(1), false);
+    assertEquals(Primer.isPrime(2), true);
+    assertEquals(Primer.isPrime(3), true);
+    assertEquals(Primer.isPrime(4), false);
   }
 }
