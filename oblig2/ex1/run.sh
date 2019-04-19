@@ -1,1 +1,1 @@
-./gradlew test 2>/dev/null
+./gradlew test

@@ -16,6 +16,9 @@ class Primer {
     boolean[] primeFlags;
     int numFound;
 
+    if (N < 0)
+      return new int[0];
+
     primeFlags = new boolean[N + 1];
     numFound = flagPrimesUpTo(primeFlags);
 
