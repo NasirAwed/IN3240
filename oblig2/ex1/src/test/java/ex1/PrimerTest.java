@@ -1,5 +1,11 @@
-class Main {
-  public static void main(String[] args) {
+package ex1;
+
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+public class PrimerTest {
+  @Test
+  public void testAppHasAGreeting() {
     Primer p = new Primer();
     int N = 100;
     int[] primes;
@@ -13,5 +19,7 @@ class Main {
     System.out.println(p.isPrime(2));
     System.out.println(p.isPrime(3));
     System.out.println(p.isPrime(4));
+
+    assertEquals(2, 3);
   }
 }

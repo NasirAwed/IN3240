@@ -30,3 +30,9 @@ dependencies {
 
 // Define the main class for the application
 mainClassName = 'ex1.App'
+
+test {
+  testLogging {
+    exceptionFormat 'full'
+  }
+}
