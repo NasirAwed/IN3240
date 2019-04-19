@@ -5,3 +5,4 @@
 *.png
 *.html
 .DS_Store
+*.class
