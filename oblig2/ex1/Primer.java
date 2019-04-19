@@ -10,22 +10,30 @@ class Primer {
     int numFound;
 
     primeFlags = new boolean[N];
-    assumePrimesTrue(primeFlags);
+    numFound = flagPrimesUpTo(primeFlags);
 
+    return listPrimesFromFlags(primeFlags, numFound);
+  }
+
+  private int flagPrimesUpTo(boolean[] flags) {
+    int numFound;
+
+    assumePrimesTrue(flags);
     numFound = 0;
-    for (int i = 2; i < primeFlags.length; i++) {
-      if (!primeFlags[i])
+
+    for (int i = 2; i < flags.length; i++) {
+      if (!flags[i])
         continue;
 
       numFound++;
 
-      for (int j = i + 1; j < primeFlags.length; j++) {
+      for (int j = i + 1; j < flags.length; j++) {
         if (Util.isDivisible(j, i))
-          primeFlags[j] = false;
+          flags[j] = false;
       }
     }
 
-    return listPrimesFromFlags(primeFlags, numFound);
+    return numFound;
   }
 
   private void assumePrimesTrue(boolean[] v) {
