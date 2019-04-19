@@ -12,7 +12,10 @@ public class PrimerTest {
     primes = Primer.getPrimesUpTo(N);
     for (int i = 0; i < primes.length; i++)
       System.out.println(primes[i]);
+  }
 
+  @Test
+  public void testFirstFiveNumbersPrimeness() {
     assertEquals(Primer.isPrime(0), false);
     assertEquals(Primer.isPrime(1), false);
     assertEquals(Primer.isPrime(2), true);
