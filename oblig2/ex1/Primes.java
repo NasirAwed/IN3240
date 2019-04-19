@@ -1,5 +1,9 @@
 class Primes {
-  public static void main(String[] args) {
-    System.out.println("hey ho");
+  public boolean isPrime(int x) {
+    return false; // TODO
+  }
+
+  public int[] getPrimes(int N) {
+    return null; // TODO
   }
 }
