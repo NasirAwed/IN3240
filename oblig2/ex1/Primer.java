@@ -1,43 +1,47 @@
 import java.util.Arrays;
 
 class Primer {
-  private boolean isDivisible(int a, int b) {
-    // TODO refactor out of this class
-
-    return a % b == 0;
-  }
-
   public boolean isPrime(int x) {
     return false; // TODO
   }
 
   public int[] getPrimesUpTo(int N) {
-    boolean[] isPrimes;
-    int[] primes;
+    boolean[] primeFlags;
     int numFound;
 
-    isPrimes = new boolean[N];
-    Arrays.fill(isPrimes, true);
-    isPrimes[0] = false;
-    isPrimes[1] = false;
+    primeFlags = new boolean[N];
+    assumePrimesTrue(primeFlags);
 
     numFound = 0;
-    for (int i = 0; i < isPrimes.length; i++) {
-      if (!isPrimes[i])
+    for (int i = 2; i < primeFlags.length; i++) {
+      if (!primeFlags[i])
         continue;
 
       numFound++;
 
-      for (int j = i + 1; j < isPrimes.length; j++) {
-        if (isDivisible(j, i))
-          isPrimes[j] = false;
+      for (int j = i + 1; j < primeFlags.length; j++) {
+        if (Util.isDivisible(j, i))
+          primeFlags[j] = false;
       }
     }
 
-    primes = new int[numFound];
-    int idx = 0; // TODO don't declare and init vars within body!
-    for (int i = 0; i < isPrimes.length; i++) {
-      if (isPrimes[i]) {
+    return listPrimesFromFlags(primeFlags, numFound);
+  }
+
+  private void assumePrimesTrue(boolean[] v) {
+    Arrays.fill(v, true);
+    v[0] = false;
+    v[1] = false;
+  }
+
+  private int[] listPrimesFromFlags(boolean[] flags, int found) {
+    int[] primes;
+    int idx;
+
+    primes = new int[found];
+    idx = 0;
+    for (int i = 0; i < flags.length; i++) {
+      if (flags[i]) {
         primes[idx] = i;
         idx++;
       }
