@@ -16,8 +16,9 @@ class Primer {
     boolean[] primeFlags;
     int numFound;
 
-    if (N < 0)
+    if (N < 0) {
       return new int[0];
+    }
 
     primeFlags = new boolean[N + 1];
     numFound = flagPrimesUpTo(primeFlags);
@@ -32,14 +33,16 @@ class Primer {
     numFound = 0;
 
     for (int i = 2; i < flags.length; i++) {
-      if (!flags[i])
+      if (!flags[i]) {
         continue;
+      }
 
       numFound++;
 
       for (int j = i + 1; j < flags.length; j++) {
-        if (Util.isDivisible(j, i))
+        if (Util.isDivisible(j, i)) {
           flags[j] = false;
+        }
       }
     }
 
@@ -48,8 +51,9 @@ class Primer {
 
   private static void assumePrimesTrue(boolean[] v) {
     Arrays.fill(v, true);
-    for (int i = 0; i < 2 && i < v.length; i++)
+    for (int i = 0; i < 2 && i < v.length; i++) {
       v[i] = false;
+    }
   }
 
   private static int[] listPrimesFromFlags(boolean[] flags, int truths) {
