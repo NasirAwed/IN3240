@@ -2,14 +2,19 @@ import java.util.Arrays;
 
 class Primer {
   public boolean isPrime(int x) {
-    return false; // TODO
+    boolean[] primeFlags;
+
+    primeFlags = new boolean[x + 1];
+    flagPrimesUpTo(primeFlags);
+
+    return primeFlags[x];
   }
 
   public int[] getPrimesUpTo(int N) {
     boolean[] primeFlags;
     int numFound;
 
-    primeFlags = new boolean[N];
+    primeFlags = new boolean[N + 1];
     numFound = flagPrimesUpTo(primeFlags);
 
     return listPrimesFromFlags(primeFlags, numFound);
@@ -38,15 +43,15 @@ class Primer {
 
   private void assumePrimesTrue(boolean[] v) {
     Arrays.fill(v, true);
-    v[0] = false;
-    v[1] = false;
+    for (int i = 0; i < 2 && i < v.length; i++)
+      v[i] = false;
   }
 
-  private int[] listPrimesFromFlags(boolean[] flags, int found) {
+  private int[] listPrimesFromFlags(boolean[] flags, int truths) {
     int[] primes;
     int idx;
 
-    primes = new int[found];
+    primes = new int[truths];
     idx = 0;
     for (int i = 0; i < flags.length; i++) {
       if (flags[i]) {
