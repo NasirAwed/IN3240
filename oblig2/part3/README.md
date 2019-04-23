@@ -32,3 +32,13 @@ Sequence of states that gives 100% transition coverage:
 12. Cancel
 
 With a 100% transition coverage you necessarily have 100% state coverage, but not vice versa.
+
+# Exercise 5
+
+## 5.1
+
+TODO
+
+## 5.2
+
+TODO
