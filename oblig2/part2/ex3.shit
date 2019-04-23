@@ -1,0 +1,10 @@
+(see separate file for decision table)
+
+We combined EV and combustion into 1 condition.
+Either it is electric (T) or it is not (F, combustion).
+This resulted in a very terse table, but it is correct.
+
+If we had separate conditions for this, we would need to invalidate (X) impossible cases: Such as neither electric nor combustion.
+This would also require us to make a decision about hybrid vehicles (incomplete spec, or bad interpretation).
+
+Reduction is impossible with our beautifully brief table, but had it been bigger, we could've joined those collumns which had the same output results.

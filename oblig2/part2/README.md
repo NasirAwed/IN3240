@@ -36,4 +36,22 @@ Sagittarius end (12-21) is "unvalid date"
 
 ## 2.3
 
-See separate document.
+See separate document for IEEE829-style report.
+
+# Exercise 3
+
+## 3.1
+
+(see separate file for decision table)
+
+We combined EV and combustion into 1 condition.
+Either it is electric (T) or it is not (F, combustion).
+This resulted in a very terse table, but it is correct.
+
+If we had separate conditions for this, we would need to invalidate (X) impossible cases: Such as neither electric nor combustion.
+This would also require us to make a decision about hybrid vehicles (incomplete spec, or bad interpretation).
+
+## 3.2
+
+Reduction is impossible with our beautifully brief table, but had it been bigger, we could've joined those collumns which had the same output results.
+Those columns are covered by the same rule.
