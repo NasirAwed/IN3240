@@ -35,10 +35,10 @@ With a 100% transition coverage you necessarily have 100% state coverage, but no
 
 # Exercise 5
 
-## 5.1
+Gleaned from the book:
+* Use cases are a good basis for test cases
+* Use case testing is a specification-based technique
 
-TODO
+## 5.1 and 5.2
 
-## 5.2
-
-TODO
+(answer in attached file)
