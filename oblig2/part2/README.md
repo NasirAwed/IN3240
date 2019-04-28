@@ -19,20 +19,26 @@ Equivalence partitions (VALID or implicitly invalid):
 
 The boundary values are the numbers at each closed end of the intervals (i.e. the numbers next to '[' and ']').
 
-TODO matrix of partitions
+Alternatives:
+Viewing the combinations of months and days partitions as a matrix of partitions.
+Using the zodiacs ase partitions (this actually helped in the next exercise).
 
-## 2.2
+## 2.2 (mostly experience-based and specification-based)
 
 Failure to show informative note:
 When clicking the button and no values are specified.
 
-Inconsistent fonts:
+Inconsistent fonts (with state transition testing):
 Clicking with no values differ when doing it after just starting the program or after viewing a zodiac description.
 
-Letters or other symbols:
+Letters or other symbols in entry box:
+Doesn't give a proper error message.
 
-Sagittarius Boundary Value Analysis:
+Sagittarius Boundary Value Analysis (on zodiacs):
 Sagittarius end (12-21) is "unvalid date"
+
+Cancer boundary value analysis (on dates):
+Should fail at June 31.
 
 ## 2.3
 
