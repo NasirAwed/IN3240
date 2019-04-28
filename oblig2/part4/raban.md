@@ -100,3 +100,11 @@ As mentioned, risk assesment is also among the concerns of test management.
 As well is reporting incidents.
 
 ## Team coordination
+
+Important parts of coordinating teams are good communication, clear objectives, defined roles i.a..
+In orchestrating this, one may also keep in mind the independence level of testing: Author, same team, separate team, 3rd party.
+The roles of a team can for example be divided into test leader and tester.
+It is also important to consider that planning is a form of communication with project team, testers, peers, managers, other stakeholders.
+Teams can also play a part in organizational issues, among: Lacking people, skills, training, communication, complexity of team or organization.
+Communication should be kept constructive and fact-focused.
+Management also plays a role in making sure that the requirements are well defined and that responsibilities are well understood.
