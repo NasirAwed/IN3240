@@ -55,6 +55,25 @@ Just like all the other types of testing, this can be applied at any level of te
 
 ## Testing techniques
 
+Testing techniques are prescriptions for how to perform a certain type of test.
+This term can maybe best be described by drawing a taxonomy:
+At the top of the taxonomy, we can differentiate between _static_ and _dynamic_ testing.
+
+Static testing **does not run/execute the system**.
+It could be done by manual review: either formal, informal, technical, walkthrough, inspection.
+Or it could be automated, by code analysers: such a linting, data flow analysis, control flow analysis.
+
+Dynamic testing doe run the system.
+But here it is easier to subdivide the taxonomy even further:
+Structure-based (as in the types of testing) does e.g. statement coverage, decision coverage, condition coverage.
+Experience-based, can be done by error guessing, or exploratory testing.
+Specification-based testing may utilize equivalence partitioning, boundary value analysis, use case testing, state transition testing, decision tables.
+
+Choosing which one (or more) of the test techniques to use depends (of course) on the situation.
+Risk is always a factor, determining how thorough and how wide one must test.
+Resources is another factor, which can be arbitrarily subdivided into e.g. time, budget, documentation, knowledge, etc.
+Other factors may also apply.
+
 ## Test management
 
 ## Team coordination
