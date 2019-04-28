@@ -71,9 +71,32 @@ Specification-based testing may utilize equivalence partitioning, boundary value
 
 Choosing which one (or more) of the test techniques to use depends (of course) on the situation.
 Risk is always a factor, determining how thorough and how wide one must test.
-Resources is another factor, which can be arbitrarily subdivided into e.g. time, budget, documentation, knowledge, etc.
+Resources/constraints is another factor, which can be arbitrarily subdivided into e.g. time, budget, documentation, knowledge, etc.
 Other factors may also apply.
 
 ## Test management
+
+The concerns of test management are many, and can be divided among several topics.
+The book divides them in 6 sections, but they can also be viewed in relation to the "fundamental testing processes" (particularly plan/control, eval/report, closure/finalizing).
+
+The team and organization "must" be managed.
+While testing could be performed by the development team that writes the code, even though they could potentially have a benefit in that they know the system well, having a different team (or 3rd party specialist) could be beneficial in terms of independence.
+A person "looking in" can get a whole different perspective and discover a different set of bugs.
+In any case, the test leader is responsible for planning, monitoring and controlling; ensuring any requirements for the fundamental processes.
+
+Planning is concerned with delegating responsibilities.
+This, of course, relates to the organizatoinal aspect (heeding independence etc).
+Controlling and adjusting the set course is part of planning.
+To obtain feedback about the process and steer accordingly.
+Initially, estimates are made, and subsequently one evaluates both entry- and exit criteria.
+
+Assesing progress, through metrics, checked progress against schedule and budget.
+And important point is _visibility_, which can be achieved through monitoring, and such collected information can measure exit criteria.
+Summarizing that information is done through reporting, which could serve as useful in future decisions or to inform stakeholders, etc.
+Assesment of progress also serves in evaluating risks and controlling the test plan.
+
+Additional responsibilities of test management are so called "configuration management" comprising of keeping track of testing through version control, (identifiable) reports and documentation, and resulting data.
+As mentioned, risk assesment is also among the concerns of test management.
+As well is reporting incidents.
 
 ## Team coordination
